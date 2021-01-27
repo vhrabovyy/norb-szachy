@@ -109,7 +109,7 @@ public abstract class Ruch {
 
     }
 
-    public boolean Atak() {
+    public boolean atak() {
         return false;
     }
 
@@ -139,7 +139,7 @@ public abstract class Ruch {
                     return ruch;
                 }
             }
-            return plansza;
+            return null;
         }
     }
 }

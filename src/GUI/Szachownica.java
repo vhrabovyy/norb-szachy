@@ -46,8 +46,8 @@ public class Szachownica {
         this.wygladGry = new JFrame("Szachy Diagonalne");
         this.wygladGry.setLayout(new BorderLayout());
         this.wygladGry.setSize(ZEWNETRZNY_ROZMIAR);
-        this.panelPlanszy = new PanelPlanszy();
         this.planszaZ_Szachami = Plansza.stworzPlanszeDoSzachowDiagonalnych();
+        this.panelPlanszy = new PanelPlanszy();
         this.wygladGry.setVisible(true);
         this.wygladGry.setJMenuBar(szachownicaMenuBar);
         this.wygladGry.add(this.panelPlanszy, BorderLayout.CENTER);
@@ -155,9 +155,10 @@ public class Szachownica {
             this.removeAll();
             if (plansza.getPole(this.numerIDPola).zajetePole()) {
                 try {
-                    final BufferedImage image = ImageIO.read(new File(sciezkaDoObrazkowBierek +
+                    final String fileName = sciezkaDoObrazkowBierek +
                             plansza.getPole(this.numerIDPola).getBierka().getKolorBierki().toString().substring(0,1) +
-                            plansza.getPole(this.numerIDPola).getBierka().toString() + ".gif"));
+                            plansza.getPole(this.numerIDPola).getBierka().toString() + ".gif";
+                    final BufferedImage image = ImageIO.read(new File(fileName));
                     add(new JLabel(new ImageIcon(image)));
                 } catch (IOException e) {
                     e.printStackTrace();
