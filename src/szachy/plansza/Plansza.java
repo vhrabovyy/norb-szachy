@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Plansza extends Ruch {
+public class Plansza {
 
     private final List<Pole> planszaDoGry;
     private final Collection<Bierka> bialeBierki;
